@@ -1,0 +1,21 @@
+.ds-mobile-dropdown {
+    background: #003171;
+    position: absolute;
+    color: #fff;
+    top: 100px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s cubic-bezier(0.3, 1, 0.3, 1);
+}
+.flex {
+    display: flex;
+}
+
+.block {
+    display: block;
+}

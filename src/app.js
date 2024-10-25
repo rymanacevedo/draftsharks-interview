@@ -1,4 +1,4 @@
-import Navigation from "./components/Navigation.js"
+import Navigation from './components/Navigation.js'
 const { createApp } = Vue
 
 createApp({
@@ -10,5 +10,5 @@ createApp({
     <div>
       <navigation></navigation>
     </div>
-  `
+  `,
 }).mount('#app')
