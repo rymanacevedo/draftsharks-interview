@@ -1,14 +1,15 @@
+import Grid from './components/Grid.js'
 import Navigation from './components/Navigation.js'
 const { createApp } = Vue
 
 createApp({
   components: {
     Navigation,
+    Grid,
   },
   setup() {},
   template: `
-    <div>
       <navigation></navigation>
-    </div>
+      <grid></grid>
   `,
 }).mount('#app')
