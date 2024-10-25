@@ -1,10 +1,14 @@
-const { createApp, ref } = Vue
+import Navigation from "./components/Navigation.js"
+const { createApp } = Vue
 
 createApp({
-  setup() {
-    const message = ref('Hello Vue!')
-    return {
-      message
-    }
-  }
+  components: {
+    Navigation,
+  },
+  setup() {},
+  template: `
+    <div>
+      <navigation></navigation>
+    </div>
+  `
 }).mount('#app')
