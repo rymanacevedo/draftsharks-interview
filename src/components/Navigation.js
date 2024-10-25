@@ -10,17 +10,25 @@ export default {
         </div>
         <!-- Mobile Menu Toggle -->
         <button id="mobile-menu-trigger" class="nav-trigger nav-open" aria-expanded="false" aria-controls="mobile-dropdown">
-        Open Navigation
+            <span>X</span>
+            <span class="block">Open Navigation</span>
         </button>
         <button class="hide-nav-menu" aria-label="Hide Navigation Menu">
-        <img src="https://www.draftsharks.com/img/icons/hide-nav.svg" alt="" width="25" height="25"><br>Hide Menu
+            <img src="https://www.draftsharks.com/img/icons/hide-nav.svg" alt="" width="25" height="25">
+            <span class="block">Hide Menu</span>
         </button>
     </div>
 
     <div class="block"> 
         <!-- Main Navigation -->
-        <nav aria-label="Main Navigation">
+        <nav class="flex flex-column" aria-label="Main Navigation">
         <ul>
+            <li>
+                <a href="#site-search-container" class="search-link" aria-label="Open search">
+                    <img src="https://www.draftsharks.com/img/icons/search-white.svg" alt="Search" width="25" height="25">
+                    Search
+                </a>
+            </li>
             <li><a href="#">News</a></li>
             <li class="dropdown">
             <button class="dropdown-toggle" aria-expanded="false" aria-controls="advice-drop-content">Advice</button>
@@ -49,21 +57,14 @@ export default {
         </ul>
         </nav>
          <!-- Extra Menu Options -->
-        <div class="extra-menu">
-            <a href="#site-search-container" class="search-link" aria-label="Open search">
-                <img src="https://www.draftsharks.com/img/icons/search-white.svg" alt="Search" width="25" height="25">
-            </a>
-            <a href="/login" class="outline-btn btn"><strong>Login</strong></a>
-            <a href="/subscribe" class="white-btn btn"><strong>Sign Up</strong></a>
+        <div class="extra-menu flex flex-column">
+            <a href="#" class="outline-btn btn"><strong>Login</strong></a>
+            <a href="#" class="white-btn btn"><strong>Sign Up</strong></a>
         </div>
     </div>
 </header>
     `,
   styles: `
-    position: relative;
-    height: 100px;
-    background: #041944;
-    width: 100%;
-    z-index: 1056;
+
     `,
 }
