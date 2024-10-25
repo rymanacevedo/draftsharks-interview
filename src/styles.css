@@ -12,14 +12,6 @@
     overflow: hidden;
     transition: max-height .3s cubic-bezier(0.3, 1, 0.3, 1);
 }
-.flex {
-    display: flex;
-}
-
-.flex-column {
-    flex-direction: column;
-}
-
-.block {
-    display: block;
+.green-grid-bg {
+    background: #2a4018;
 }
