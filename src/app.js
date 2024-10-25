@@ -70,7 +70,7 @@ createApp({
     </card>
 
     <!-- Other Cards -->
-    <card heading="Offense"></card>
-    <card heading="Defense & Special Teams"></card>
+    <card :heading="selectedTeamName + ' Offense'"></card>
+    <card :heading="selectedTeamName + ' Defense & Special Teams'"></card>
   `,
 }).mount('#app')
