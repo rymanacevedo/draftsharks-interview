@@ -1,11 +1,17 @@
 export default {
+    props: {
+        selectedHeader: {
+            type: String,
+            required: true
+        }
+    },
   template: `
     <div class="green-grid-bg title-bar flex flex-column center">
         <h1 class="flex flex-row align-center justify-center">
             <svg class="h2" enable-background="new 0 0 65 65" viewBox="0 0 65 65" xmlns="http://www.w3.org/2000/svg">
                 <path d="m65 27.97h-20.06v-7.46h-13.22v-5.24h17.63v-13.9h-38.4v13.9h17.64v8.37h13.22v4.33h-15.21v13.9h24.49v13.25l-12.69.09v-5.48h-38.4v13.9h38.4v-5.29l15.82-.11v-16.36h10.78z" fill="#fff"></path>
             </svg>
-            <span class="white">Arizona Cardinals Depth Charts</span>
+            <span class="white">{{selectedHeader}} Depth Charts</span>
         </h1>
         <a class="center f6 link dim ph3 pv2 mb2 black bg-light-gray pointer br2" target="_blank">
         <svg class="h1" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 20 20" xml:space="preserve">

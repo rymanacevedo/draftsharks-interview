@@ -57,7 +57,7 @@ createApp({
   },
   template: `
     <navigation></navigation>
-    <grid></grid>
+    <grid :selectedHeader="selectedTeamName"></grid>
 
     <!-- Card for Selecting a Team -->
     <card heading="Select Team" :selectedHeader="selectedTeamName">
