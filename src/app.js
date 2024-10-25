@@ -17,47 +17,91 @@ createApp({
         { name: 'Baltimore Ravens', value: '3' },
         { name: 'Buffalo Bills', value: '4' },
         { name: 'Carolina Panthers', value: '5' },
-        { name: 'Chicago Bears', value: '6' },
-        { name: 'Cincinnati Bengals', value: '7' },
-        { name: 'Cleveland Browns', value: '8' },
-        { name: 'Dallas Cowboys', value: '9' },
-        { name: 'Denver Broncos', value: '10' },
-        { name: 'Detroit Lions', value: '11' },
-        { name: 'Green Bay Packers', value: '12' },
-        { name: 'Houston Texans', value: '13' },
-        { name: 'Indianapolis Colts', value: '14' },
-        { name: 'Jacksonville Jaguars', value: '15' },
-        { name: 'Kansas City Chiefs', value: '16' },
-        { name: 'Las Vegas Raiders', value: '23' },
-        { name: 'Los Angeles Chargers', value: '26' },
-        { name: 'Los Angeles Rams', value: '29' },
-        { name: 'Miami Dolphins', value: '17' },
-        { name: 'Minnesota Vikings', value: '18' },
-        { name: 'New England Patriots', value: '19' },
-        { name: 'New Orleans Saints', value: '20' },
-        { name: 'New York Giants', value: '21' },
-        { name: 'New York Jets', value: '22' },
-        { name: 'Philadelphia Eagles', value: '24' },
-        { name: 'Pittsburgh Steelers', value: '25' },
-        { name: 'Rookie', value: '34' },
-        { name: 'San Francisco 49ers', value: '28' },
-        { name: 'Seattle Seahawks', value: '27' },
-        { name: 'Tampa Bay Buccaneers', value: '30' },
-        { name: 'Tennessee Titans', value: '31' },
-        { name: 'Washington Commanders', value: '33' }
+        { name: 'Chicago Bears', value: '6' }
       ],
-      selectedOption: '1' // Default to the first team
+      selectedOption: '1',
+      rosters: {
+        "1": {
+          "team": "Arizona Cardinals",
+          "positions": {
+            "QB": ["Kyler Murray", "Colt McCoy"],
+            "RB": ["James Conner", "Keontay Ingram"],
+            "LWR": ["Marquise Brown", "Rondale Moore"],
+            "RWR": ["DeAndre Hopkins"],
+            "SWR": ["Greg Dortch"],
+            "TE": ["Zach Ertz", "Trey McBride"]
+          }
+        },
+        "2": {
+          "team": "Atlanta Falcons",
+          "positions": {
+            "QB": ["Desmond Ridder", "Taylor Heinicke"],
+            "RB": ["Tyler Allgeier", "Bijan Robinson", "Cordarrelle Patterson"],
+            "LWR": ["Drake London"],
+            "RWR": ["Mack Hollins"],
+            "SWR": ["Scotty Miller"],
+            "TE": ["Kyle Pitts", "Jonnu Smith"]
+          }
+        },
+        "3": {
+          "team": "Baltimore Ravens",
+          "positions": {
+            "QB": ["Lamar Jackson", "Tyler Huntley"],
+            "RB": ["J.K. Dobbins", "Gus Edwards"],
+            "LWR": ["Odell Beckham Jr.", "Rashod Bateman"],
+            "RWR": ["Devin Duvernay"],
+            "SWR": ["Nelson Agholor"],
+            "TE": ["Mark Andrews", "Isaiah Likely"]
+          }
+        },
+        "4": {
+          "team": "Buffalo Bills",
+          "positions": {
+            "QB": ["Josh Allen", "Kyle Allen"],
+            "RB": ["James Cook", "Damien Harris", "Latavius Murray"],
+            "LWR": ["Stefon Diggs"],
+            "RWR": ["Gabe Davis"],
+            "SWR": ["Trent Sherfield"],
+            "TE": ["Dawson Knox", "Dalton Kincaid"]
+          }
+        },
+        "5": {
+          "team": "Carolina Panthers",
+          "positions": {
+            "QB": ["Bryce Young", "Andy Dalton"],
+            "RB": ["Miles Sanders", "Chuba Hubbard"],
+            "LWR": ["Adam Thielen"],
+            "RWR": ["DJ Chark"],
+            "SWR": ["Laviska Shenault Jr."],
+            "TE": ["Hayden Hurst", "Tommy Tremble"]
+          }
+        },
+        "6": {
+          "team": "Chicago Bears",
+          "positions": {
+            "QB": ["Justin Fields", "P.J. Walker"],
+            "RB": ["Khalil Herbert", "D'Onta Foreman", "Roschon Johnson"],
+            "LWR": ["Darnell Mooney"],
+            "RWR": ["Chase Claypool"],
+            "SWR": ["Velus Jones Jr."],
+            "TE": ["Cole Kmet", "Robert Tonyan"]
+          }
+        }
+      }
     }
   },
   computed: {
     selectedTeamName() {
       const team = this.teams.find(team => team.value === this.selectedOption)
       return team ? team.name : ''
+    },
+    selectedTeamPositions() {
+      return this.rosters[this.selectedOption]?.positions || {}
     }
   },
   template: `
     <navigation></navigation>
-    <grid :selectedHeader="selectedTeamName"></grid>
+    <grid></grid>
 
     <!-- Card for Selecting a Team -->
     <card heading="Select Team" :selectedHeader="selectedTeamName">
@@ -69,8 +113,26 @@ createApp({
       </select>
     </card>
 
-    <!-- Other Cards -->
-    <card :heading="selectedTeamName + ' Offense'"></card>
-    <card :heading="selectedTeamName + ' Defense & Special Teams'"></card>
+    <!-- Offense Card with Dynamic Player List -->
+    <card heading="Offense">
+      <h3>Quarterbacks (QB):</h3>
+      <ul>
+        <li v-for="player in selectedTeamPositions.QB" :key="player">{{ player }}</li>
+      </ul>
+      <h3>Running Backs (RB):</h3>
+      <ul>
+        <li v-for="player in selectedTeamPositions.RB" :key="player">{{ player }}</li>
+      </ul>
+      <!-- Add other positions as needed -->
+    </card>
+
+    <!-- Defense & Special Teams Card -->
+    <card heading="Defense & Special Teams">
+      <h3>Tight Ends (TE):</h3>
+      <ul>
+        <li v-for="player in selectedTeamPositions.TE" :key="player">{{ player }}</li>
+      </ul>
+      <!-- Add other defensive positions or special teams as needed -->
+    </card>
   `,
 }).mount('#app')
