@@ -47,6 +47,7 @@ createApp({
         { name: 'Washington Commanders', value: '32' }
       ],
       selectedOption: '1',
+      selectedPosition: 'QB',
       rosters: {
         "1": {
           "team": "Arizona Cardinals",
@@ -410,11 +411,14 @@ createApp({
     },
     selectedTeamPositions() {
       return this.rosters[this.selectedOption]?.positions || {};
+    },
+    filteredPlayers() {
+      return this.selectedTeamPositions[this.selectedPosition] || [];
     }
   },
   template: `
     <navigation></navigation>
-    <grid></grid>
+    <grid :selectedHeader="selectedTeamName"></grid>
 
     <!-- Card for Selecting a Team -->
     <card heading="Select Team" :selectedHeader="selectedTeamName">
@@ -426,23 +430,22 @@ createApp({
       </select>
     </card>
 
+    <div class="position-filters">
+      <button @click="selectedPosition = 'QB'">QB</button>
+      <button @click="selectedPosition = 'RB'">RB</button>
+      <button @click="selectedPosition = 'LWR'">LWR</button>
+      <button @click="selectedPosition = 'RWR'">RWR</button>
+      <button @click="selectedPosition = 'SWR'">SWR</button>
+      <button @click="selectedPosition = 'TE'">TE</button>
+    </div>
+
+
     <!-- Offense Card with Dynamic Player List -->
-    <card :heading="'Offense ' + selectedTeamName">
-      <h3>Quarterbacks (QB):</h3>
+    <card :heading="selectedTeamName + ' Offense'">
+       <h3>{{ selectedPosition }} Players:</h3>
       <ul>
-        <li v-for="player in selectedTeamPositions.QB" :key="player">{{ player }}</li>
+        <li v-for="player in filteredPlayers" :key="player">{{ player }}</li>
       </ul>
-      <h3>Running Backs (RB):</h3>
-      <ul>
-        <li v-for="player in selectedTeamPositions.RB" :key="player">{{ player }}</li>
-      </ul>
-    </card>
-    <card :heading="selectedTeamName  +' Defense & Special Teams'">
-      <h3>Tight Ends (TE):</h3>
-      <ul>
-        <li v-for="player in selectedTeamPositions.TE" :key="player">{{ player }}</li>
-      </ul>
-      <!-- Add other defensive positions or special teams as needed -->
     </card>
   `,
 }).mount('#app');
