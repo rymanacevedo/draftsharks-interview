@@ -47,6 +47,7 @@ createApp({
         { name: 'Washington Commanders', value: '32' }
       ],
       selectedOption: '1',
+      selectedCategory: 'Offense',
       selectedPosition: 'QB',
       rosters: {
         "1": {
@@ -430,19 +431,28 @@ createApp({
       </select>
     </card>
 
+    <div class="category-filters">
+      <button @click="selectedCategory = 'Offense'" :class="{ active: selectedCategory === 'Offense' }">Offense</button>
+      <button @click="selectedCategory = 'Defense'" :class="{ active: selectedCategory === 'Defense' }">Defense</button>
+    </div>
+
     <div class="position-filters">
-      <button @click="selectedPosition = 'QB'">QB</button>
-      <button @click="selectedPosition = 'RB'">RB</button>
-      <button @click="selectedPosition = 'LWR'">LWR</button>
-      <button @click="selectedPosition = 'RWR'">RWR</button>
-      <button @click="selectedPosition = 'SWR'">SWR</button>
-      <button @click="selectedPosition = 'TE'">TE</button>
+      <button @click="selectedPosition = 'QB'" v-if="selectedCategory === 'Offense'">QB</button>
+      <button @click="selectedPosition = 'RB'" v-if="selectedCategory === 'Offense'">RB</button>
+      <button @click="selectedPosition = 'LWR'" v-if="selectedCategory === 'Offense'">LWR</button>
+      <button @click="selectedPosition = 'RWR'" v-if="selectedCategory === 'Offense'">RWR</button>
+      <button @click="selectedPosition = 'SWR'" v-if="selectedCategory === 'Offense'">SWR</button>
+      <button @click="selectedPosition = 'TE'" v-if="selectedCategory === 'Offense'">TE</button>
+      <button @click="selectedPosition = 'DL'" v-if="selectedCategory === 'Defense'">DL</button>
+      <button @click="selectedPosition = 'LB'" v-if="selectedCategory === 'Defense'">LB</button>
+      <button @click="selectedPosition = 'CB'" v-if="selectedCategory === 'Defense'">CB</button>
+      <button @click="selectedPosition = 'S'" v-if="selectedCategory === 'Defense'">S</button>
     </div>
 
 
     <!-- Offense Card with Dynamic Player List -->
-    <card :heading="selectedTeamName + ' Offense'">
-       <h3>{{ selectedPosition }} Players:</h3>
+    <card :heading="selectedTeamName + ' ' + selectedCategory">
+     <h3>{{ selectedPosition }} Players:</h3>
       <ul>
         <li v-for="player in filteredPlayers" :key="player">{{ player }}</li>
       </ul>
