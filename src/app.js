@@ -1,5 +1,6 @@
 import Card from './components/Card.js'
 import Cta from './components/Cta.js'
+import FooterComponent from './components/Footer.js'
 import Grid from './components/Grid.js'
 import Navigation from './components/Navigation.js'
 const { createApp } = Vue
@@ -10,6 +11,7 @@ createApp({
     Grid,
     Card,
     Cta,
+    FooterComponent,
   },
   data() {
     return {
@@ -685,5 +687,7 @@ createApp({
       </table>
     </card>
     <cta></cta>
+    testing
+    <footer-component></footer-component>
   `,
 }).mount('#app')
