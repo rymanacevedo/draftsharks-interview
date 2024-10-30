@@ -1,6 +1,6 @@
 // eslint.config.js
-import vue from 'eslint-plugin-vue'
-import prettier from 'eslint-plugin-prettier'
+import vue from 'eslint-plugin-vue';
+import prettier from 'eslint-plugin-prettier';
 
 export default [
   {
@@ -19,4 +19,4 @@ export default [
       'vue/no-unused-vars': 'warn', // Warn about unused vars in templates
     },
   },
-]
+];

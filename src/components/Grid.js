@@ -1,10 +1,10 @@
 export default {
-    props: {
-        selectedHeader: {
-            type: String,
-            required: true
-        }
+  props: {
+    selectedHeader: {
+      type: String,
+      required: true,
     },
+  },
   template: `
     <div class="green-grid-bg title-bar flex flex-column center">
         <h1 class="flex flex-row align-center justify-center">
@@ -24,4 +24,4 @@ Print All Team Charts
 </a>
     </div>
 `,
-}
+};

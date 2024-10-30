@@ -1,9 +1,9 @@
-import Card from './components/Card.js'
-import Cta from './components/Cta.js'
-import FooterComponent from './components/Footer.js'
-import Grid from './components/Grid.js'
-import Navigation from './components/Navigation.js'
-const { createApp } = Vue
+import Card from './components/Card.js';
+import Cta from './components/Cta.js';
+import FooterComponent from './components/Footer.js';
+import Grid from './components/Grid.js';
+import Navigation from './components/Navigation.js';
+const { createApp } = Vue;
 
 createApp({
   components: {
@@ -603,31 +603,33 @@ createApp({
           },
         },
       },
-    }
+    };
   },
 
   computed: {
     selectedTeamName() {
-      const team = this.teams.find((team) => team.value === this.selectedOption)
-      return team ? team.name : ''
+      const team = this.teams.find(
+        (team) => team.value === this.selectedOption,
+      );
+      return team ? team.name : '';
     },
     selectedTeamPositions() {
       return (
         this.rosters[this.selectedOption]?.positions[this.selectedCategory] ||
         {}
-      )
+      );
     },
     filteredPlayers() {
-      const players = this.selectedTeamPositions[this.selectedPosition] || []
+      const players = this.selectedTeamPositions[this.selectedPosition] || [];
       return this.sortPlayersOrder[this.selectedCategory] === 'asc'
         ? players.slice().sort()
-        : players.slice().sort().reverse()
+        : players.slice().sort().reverse();
     },
   },
   methods: {
     toggleSortOrder() {
       this.sortPlayersOrder[this.selectedCategory] =
-        this.sortPlayersOrder[this.selectedCategory] === 'asc' ? 'desc' : 'asc'
+        this.sortPlayersOrder[this.selectedCategory] === 'asc' ? 'desc' : 'asc';
     },
   },
   template: `
@@ -636,13 +638,15 @@ createApp({
 
     
     <!-- Card for Selecting a Team -->
-    <card heading="Select Team" :selectedHeader="selectedTeamName">
-      <label for="depthchartform-teamid">Choose a team:</label>
-      <select id="depthchartform-teamid" name="DepthChartForm[teamId]" v-model="selectedOption">
-        <option v-for="team in teams" :key="team.value" :value="team.value">
-          {{ team.name }}
-        </option>
-      </select>
+    <card showImage="true" heading="Select Team" :selectedHeader="selectedTeamName">
+      <div class="flex flex-row align-center justify-center">
+        <label class="mr2" for="depthchartform-teamid">Choose a team:</label>
+        <select id="depthchartform-teamid" name="DepthChartForm[teamId]" v-model="selectedOption">
+          <option v-for="team in teams" :key="team.value" :value="team.value">
+            {{ team.name }}
+          </option>
+        </select>
+      </div>
     </card>
 
     <div class="category-filters">
@@ -687,7 +691,6 @@ createApp({
       </table>
     </card>
     <cta></cta>
-    testing
     <footer-component></footer-component>
   `,
-}).mount('#app')
+}).mount('#app');
