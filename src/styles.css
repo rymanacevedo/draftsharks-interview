@@ -3,6 +3,7 @@
 }
 .green-grid-bg {
   background: #2a4018;
+  background: url(https://www.draftsharks.com/img/title/depth-charts-repeat.png),linear-gradient(180deg, rgb(42, 64, 24) 0%, rgb(84, 127, 47) 100%) repeat-x;
 }
 
 body {
