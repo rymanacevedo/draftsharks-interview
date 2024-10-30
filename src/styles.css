@@ -1,21 +1,33 @@
 .ds-mobile-dropdown {
-    background: #003171;
-    position: absolute;
-    color: #fff;
-    top: 100px;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-    padding: 0;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height .3s cubic-bezier(0.3, 1, 0.3, 1);
+  background: #003171;
 }
 .green-grid-bg {
-    background: #2a4018;
+  background: #2a4018;
 }
 
 body {
-    font-family: 'Montserrat', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.ds-header {
+  background-color: #041944;
+}
+
+.line1, .line2, .line3 {
+  width: 35px;
+  height: 5px;
+  background-color: white;
+  margin: 6px 0;
+  transition: 0.4s;
+}
+
+/* Update styles when .change class is applied to button */
+button.change .line1 {
+  transform: translate(0, 11px) rotate(-45deg);
+}
+button.change .line2 {
+  opacity: 0;
+}
+button.change .line3 {
+  transform: translate(0, -11px) rotate(45deg);
 }
