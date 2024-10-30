@@ -3,6 +3,7 @@ import Cta from './components/Cta.js';
 import FooterComponent from './components/Footer.js';
 import Grid from './components/Grid.js';
 import Navigation from './components/Navigation.js';
+import Tabs from './components/Tabs.js';
 const { createApp } = Vue;
 
 createApp({
@@ -11,6 +12,7 @@ createApp({
     Grid,
     Card,
     Cta,
+    Tabs,
     FooterComponent,
   },
   data() {
@@ -633,64 +635,58 @@ createApp({
     },
   },
   template: `
-    <navigation></navigation>
-    <grid :selectedHeader="selectedTeamName"></grid>
+<navigation></navigation>
+<grid :selectedHeader="selectedTeamName"></grid>
+<!-- Card for Selecting a Team -->
+<card class="mt2 mb3" showImage="true" heading="Select Team" :selectedHeader="selectedTeamName">
+  <div class="flex flex-row align-center justify-center">
+    <label class="mr2" for="depthchartform-teamid">Choose a team:</label>
+    <select id="depthchartform-teamid" name="DepthChartForm[teamId]" v-model="selectedOption">
+      <option v-for="team in teams" :key="team.value" :value="team.value">
+        {{ team.name }}
+      </option>
+    </select>
+  </div>
+</card>
+<h2>Select Offense or Defense</h2>
+<div class="category-filters flex items-center justify-center">
+  <button class="mr3 br2 f6 pointer dim ph3 pv2 mb2 dib white bg-dark-blue" @click="selectedCategory = 'Offense'" :class="{ active: selectedCategory === 'Offense' }">Offense</button>
+  <button class="br2 f6 link pointer dim ph3 pv2 mb2 dib black bg-dark-red" @click="selectedCategory = 'Defense'" :class="{ active: selectedCategory === 'Defense' }">Defense</button>
+</div>
 
-    
-    <!-- Card for Selecting a Team -->
-    <card showImage="true" heading="Select Team" :selectedHeader="selectedTeamName">
-      <div class="flex flex-row align-center justify-center">
-        <label class="mr2" for="depthchartform-teamid">Choose a team:</label>
-        <select id="depthchartform-teamid" name="DepthChartForm[teamId]" v-model="selectedOption">
-          <option v-for="team in teams" :key="team.value" :value="team.value">
-            {{ team.name }}
-          </option>
-        </select>
-      </div>
-    </card>
-
-    <div class="category-filters">
-      <button @click="selectedCategory = 'Offense'" :class="{ active: selectedCategory === 'Offense' }">Offense</button>
-      <button @click="selectedCategory = 'Defense'" :class="{ active: selectedCategory === 'Defense' }">Defense</button>
-    </div>
-
-    <div class="position-filters">
-      <button @click="selectedPosition = 'QB'" v-if="selectedCategory === 'Offense'">QB</button>
-      <button @click="selectedPosition = 'RB'" v-if="selectedCategory === 'Offense'">RB</button>
-      <button @click="selectedPosition = 'LWR'" v-if="selectedCategory === 'Offense'">LWR</button>
-      <button @click="selectedPosition = 'RWR'" v-if="selectedCategory === 'Offense'">RWR</button>
-      <button @click="selectedPosition = 'SWR'" v-if="selectedCategory === 'Offense'">SWR</button>
-      <button @click="selectedPosition = 'TE'" v-if="selectedCategory === 'Offense'">TE</button>
-      <button @click="selectedPosition = 'DL'" v-if="selectedCategory === 'Defense'">DL</button>
-      <button @click="selectedPosition = 'LB'" v-if="selectedCategory === 'Defense'">LB</button>
-      <button @click="selectedPosition = 'CB'" v-if="selectedCategory === 'Defense'">CB</button>
-      <button @click="selectedPosition = 'S'" v-if="selectedCategory === 'Defense'">S</button>
-    </div>
+<tabs 
+  :selectedCategory="selectedCategory" 
+  :selectedPosition="selectedPosition" 
+  @update:selectedPosition="selectedPosition = $event">
+</tabs>
 
 
-    <!-- Offense Card with Dynamic Player List -->
-    <card :heading="selectedTeamName + ' ' + selectedCategory">
-     <h3>{{ selectedPosition }} Players:</h3>
-     <button @click="toggleSortOrder">
-      Sort {{ sortPlayersOrder[selectedCategory] === 'asc' ? 'Descending' : 'Ascending'}}
-     </button>
-  <table>
-  <thead>
-  <tr>
-  <th>placeholder for player number</th>
-  <th>Player Name</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr v-for="(player, index) in filteredPlayers" :key="player">
-  <td>{{ index + 1 }}</td>
-  <td>{{ player }}</td>
-  </tr>
-  </tbody>
-  <caption>Player Roster</caption>
-      </table>
-    </card>
-    <cta></cta>
-    <footer-component></footer-component>
+<!-- Offense Card with Dynamic Player List -->
+<card class="mt3 mb3" :heading="selectedTeamName + ' ' + selectedCategory">
+  <button @click="toggleSortOrder">
+  Sort {{ sortPlayersOrder[selectedCategory] === 'asc' ? 'Descending' : 'Ascending'}}
+  </button>
+  <h3>{{ selectedPosition }} Players:</h3>
+  <div class="flex justify-center">
+    <table>
+      <thead>
+        <tr>
+          <th>placeholder for player number</th>
+          <th>Player Name</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr v-for="(player, index) in filteredPlayers" :key="player">
+          <td>{{ index + 1 }}</td>
+          <td>{{ player }}</td>
+        </tr>
+      </tbody>
+      <caption>Player Roster</caption>
+    </table>
+  </div>
+
+</card>
+<cta></cta>
+<footer-component></footer-component>
   `,
 }).mount('#app');
