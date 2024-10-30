@@ -1,4 +1,5 @@
 import Card from './components/Card.js';
+import CategoryFilters from './components/CategoryFilters.js';
 import Cta from './components/Cta.js';
 import FooterComponent from './components/Footer.js';
 import Grid from './components/Grid.js';
@@ -13,6 +14,7 @@ createApp({
     Card,
     Cta,
     Tabs,
+    CategoryFilters,
     FooterComponent,
   },
   data() {
@@ -648,11 +650,12 @@ createApp({
     </select>
   </div>
 </card>
-<h2>Select Offense or Defense</h2>
-<div class="category-filters flex items-center justify-center">
-  <button class="mr3 br2 f6 pointer dim ph3 pv2 mb2 dib white bg-dark-blue" @click="selectedCategory = 'Offense'" :class="{ active: selectedCategory === 'Offense' }">Offense</button>
-  <button class="br2 f6 link pointer dim ph3 pv2 mb2 dib black bg-dark-red" @click="selectedCategory = 'Defense'" :class="{ active: selectedCategory === 'Defense' }">Defense</button>
-</div>
+<h2 class="pa2 m3 ml3">Select Offense or Defense</h2>
+
+<category-filters 
+  :selectedCategory="selectedCategory" 
+  @update:selectedCategory="selectedCategory = $event">
+</category-filters>
 
 <tabs 
   :selectedCategory="selectedCategory" 
