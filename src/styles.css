@@ -32,3 +32,8 @@ button.change .line2 {
 button.change .line3 {
   transform: translate(0, -11px) rotate(45deg);
 }
+
+
+.custom-table {
+  caption-side: bottom;
+}

@@ -19,7 +19,7 @@ export default {
           v-for="position in positions" 
           :key="position" 
           @click="updatePosition(position)"
-          :class="['pointer f6 link dim br-pill ph3 pv2 mh1', { 'bg-dark-blue white': selectedPosition === position, 'bg-light-gray': selectedPosition !== position }]">
+          :class="['b pointer f6 link dim br-pill ph3 pv2 mh1', { 'bg-dark-blue white': selectedPosition === position, 'bg-light-gray': selectedPosition !== position }]">
           {{ position }}
         </button>
       </div>
