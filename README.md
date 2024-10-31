@@ -10,8 +10,6 @@ A simple Vue.js app to display NFL team rosters, allowing users to filter by tea
 ├── components/
 │   ├── Card.js
 │   ├── CategoryFilters.js
-│   ├── Cta.js
-│   ├── Footer.js
 │   ├── Grid.js
 │   ├── Navigation.js
 │   ├── PlayerTable.js
