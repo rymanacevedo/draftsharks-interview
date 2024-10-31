@@ -4,6 +4,7 @@ import Cta from './components/Cta.js';
 import FooterComponent from './components/Footer.js';
 import Grid from './components/Grid.js';
 import Navigation from './components/Navigation.js';
+import PlayerTable from './components/PlayerTable.js';
 import Tabs from './components/Tabs.js';
 const { createApp } = Vue;
 
@@ -15,6 +16,7 @@ createApp({
     Cta,
     Tabs,
     CategoryFilters,
+    PlayerTable,
     FooterComponent,
   },
   data() {
@@ -892,10 +894,10 @@ createApp({
   },
   computed: {
     selectedTeamName() {
-      const team = this.teams.find(
-        (team) => team.value === this.selectedOption,
+      return (
+        this.teams.find((team) => team.value === this.selectedOption)?.name ||
+        ''
       );
-      return team ? team.name : '';
     },
     selectedTeamPositions() {
       return (
@@ -903,14 +905,7 @@ createApp({
         {}
       );
     },
-    filteredPlayers() {
-      const players = this.selectedTeamPositions[this.selectedPosition] || [];
-      return this.sortPlayersOrder[this.selectedCategory] === 'asc'
-        ? players.slice().sort((a, b) => a.name.localeCompare(b.name))
-        : players.slice().sort((a, b) => b.name.localeCompare(a.name));
-    },
   },
-
   methods: {
     toggleSortOrder() {
       this.sortPlayersOrder[this.selectedCategory] =
@@ -918,59 +913,24 @@ createApp({
     },
   },
   template: `
-<navigation></navigation>
-<grid :selectedHeader="selectedTeamName"></grid>
-<!-- Card for Selecting a Team -->
-<card class="mt2 mb3" showImage="true" heading="Select Team" :selectedHeader="selectedTeamName">
-  <div class="flex flex-row align-center justify-center">
-    <label class="mr2" for="depthchartform-teamid">Choose a team:</label>
-    <select id="depthchartform-teamid" name="DepthChartForm[teamId]" v-model="selectedOption">
-      <option v-for="team in teams" :key="team.value" :value="team.value">
-        {{ team.name }}
-      </option>
-    </select>
-  </div>
-</card>
-<h2 class="pa2 m3 ml3">Select Offense or Defense</h2>
-
-<category-filters 
-  :selectedCategory="selectedCategory" 
-  @update:selectedCategory="selectedCategory = $event">
-</category-filters>
-
-<tabs 
-  :selectedCategory="selectedCategory" 
-  :selectedPosition="selectedPosition" 
-  @update:selectedPosition="selectedPosition = $event">
-</tabs>
-
-
-<!-- Offense Card with Dynamic Player List -->
-<card class="mt3 mb3" :heading="selectedTeamName + ' ' + selectedCategory">
-  <button @click="toggleSortOrder">
-  Sort {{ sortPlayersOrder[selectedCategory] === 'asc' ? 'Descending' : 'Ascending'}}
-  </button>
-  <h3>{{ selectedPosition }} Players:</h3>
-  <div class="flex justify-center">
-    <table class="custom-table">
-      <thead>
-        <tr>
-          <th>Jersey Number</th>
-          <th>Player Name</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="player in filteredPlayers" :key="player.name">
-          <td>{{ player.number }}</td>
-          <td>{{ player.name }}</td>
-        </tr>
-      </tbody>
-      <caption>Player Roster</caption>
-    </table>
-  </div>
-
-</card>
-<cta></cta>
-<footer-component></footer-component>
+    <navigation></navigation>
+    <grid :selectedHeader="selectedTeamName"></grid>
+    <card class="mt2 mb3" :showImage="true" heading="Select Team" :selectedHeader="selectedTeamName">
+      <div class="flex flex-row align-center justify-center">
+        <label class="mr2" for="depthchartform-teamid">Choose a team:</label>
+        <select id="depthchartform-teamid" v-model="selectedOption">
+          <option v-for="team in teams" :key="team.value" :value="team.value">{{ team.name }}</option>
+        </select>
+      </div>
+    </card>
+    <category-filters :selectedCategory="selectedCategory" @update:selectedCategory="selectedCategory = $event"></category-filters>
+    <tabs :selectedCategory="selectedCategory" :selectedPosition="selectedPosition" @update:selectedPosition="selectedPosition = $event"></tabs>
+    <card class="mt3 mb3" :heading="selectedTeamName + ' ' + selectedCategory">
+      <button class="bg-dark-blue white b br2 f6 pointer ph3 pv2" @click="toggleSortOrder">
+        Sort {{ sortPlayersOrder[selectedCategory] === 'asc' ? 'Descending' : 'Ascending'}}
+      </button>
+      <h3>{{ selectedPosition }} Players:</h3>
+      <player-table :players="selectedTeamPositions[selectedPosition]" :sortOrder="sortPlayersOrder[selectedCategory]"></player-table>
+    </card>
   `,
 }).mount('#app');
