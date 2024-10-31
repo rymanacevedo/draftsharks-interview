@@ -22,39 +22,39 @@ createApp({
   data() {
     return {
       teams: [
-        { name: 'Arizona Cardinals', value: '1' },
-        { name: 'Atlanta Falcons', value: '2' },
-        { name: 'Baltimore Ravens', value: '3' },
-        { name: 'Buffalo Bills', value: '4' },
-        { name: 'Carolina Panthers', value: '5' },
-        { name: 'Chicago Bears', value: '6' },
-        { name: 'Cincinnati Bengals', value: '7' },
-        { name: 'Cleveland Browns', value: '8' },
-        { name: 'Dallas Cowboys', value: '9' },
-        { name: 'Denver Broncos', value: '10' },
-        { name: 'Detroit Lions', value: '11' },
-        { name: 'Green Bay Packers', value: '12' },
-        { name: 'Houston Texans', value: '13' },
-        { name: 'Indianapolis Colts', value: '14' },
-        { name: 'Jacksonville Jaguars', value: '15' },
-        { name: 'Kansas City Chiefs', value: '16' },
-        { name: 'Las Vegas Raiders', value: '23' },
-        { name: 'Los Angeles Chargers', value: '26' },
-        { name: 'Los Angeles Rams', value: '29' },
-        { name: 'Miami Dolphins', value: '17' },
-        { name: 'Minnesota Vikings', value: '18' },
-        { name: 'New England Patriots', value: '19' },
-        { name: 'New Orleans Saints', value: '20' },
-        { name: 'New York Giants', value: '21' },
-        { name: 'New York Jets', value: '22' },
-        { name: 'Philadelphia Eagles', value: '24' },
-        { name: 'Pittsburgh Steelers', value: '25' },
-        { name: 'Rookie', value: '34' },
-        { name: 'San Francisco 49ers', value: '28' },
-        { name: 'Seattle Seahawks', value: '27' },
-        { name: 'Tampa Bay Buccaneers', value: '30' },
-        { name: 'Tennessee Titans', value: '31' },
-        { name: 'Washington Commanders', value: '32' },
+        { name: 'Arizona Cardinals', value: '1', imgTag: 'ARI' },
+        { name: 'Atlanta Falcons', value: '2', imgTag: 'ATL' },
+        { name: 'Baltimore Ravens', value: '3', imgTag: 'BAL' },
+        { name: 'Buffalo Bills', value: '4', imgTag: 'BUF' },
+        { name: 'Carolina Panthers', value: '5', imgTag: 'CAR' },
+        { name: 'Chicago Bears', value: '6', imgTag: 'CHI' },
+        { name: 'Cincinnati Bengals', value: '7', imgTag: 'CIN' },
+        { name: 'Cleveland Browns', value: '8', imgTag: 'CLE' },
+        { name: 'Dallas Cowboys', value: '9', imgTag: 'DAL' },
+        { name: 'Denver Broncos', value: '10', imgTag: 'DEN' },
+        { name: 'Detroit Lions', value: '11', imgTag: 'DET' },
+        { name: 'Green Bay Packers', value: '12', imgTag: 'GRE' },
+        { name: 'Houston Texans', value: '13', imgTag: 'HOU' },
+        { name: 'Indianapolis Colts', value: '14', imgTag: 'IND' },
+        { name: 'Jacksonville Jaguars', value: '15', imgTag: 'JAC' },
+        { name: 'Kansas City Chiefs', value: '16', imgTag: 'KAN' },
+        { name: 'Las Vegas Raiders', value: '23', imgTag: 'LAS' },
+        { name: 'Los Angeles Chargers', value: '26', imgTag: 'LAC' },
+        { name: 'Los Angeles Rams', value: '29', imgTag: 'LAR' },
+        { name: 'Miami Dolphins', value: '17', imgTag: 'MIA' },
+        { name: 'Minnesota Vikings', value: '18', imgTag: 'MIN' },
+        { name: 'New England Patriots', value: '19', imgTag: 'NE' },
+        { name: 'New Orleans Saints', value: '20', imgTag: 'NO' },
+        { name: 'New York Giants', value: '21', imgTag: 'NYG' },
+        { name: 'New York Jets', value: '22', imgTag: 'NYJ' },
+        { name: 'Philadelphia Eagles', value: '24', imgTag: 'PHI' },
+        { name: 'Pittsburgh Steelers', value: '25', imgTag: 'PIT' },
+        { name: 'Rookie', value: '34', imgTag: null },
+        { name: 'San Francisco 49ers', value: '28', imgTag: 'SAN' },
+        { name: 'Seattle Seahawks', value: '27', imgTag: 'SEA' },
+        { name: 'Tampa Bay Buccaneers', value: '30', imgTag: 'TAM' },
+        { name: 'Tennessee Titans', value: '31', imgTag: 'TEN' },
+        { name: 'Washington Commanders', value: '32', imgTag: 'WAS' },
       ],
       selectedOption: '1',
       selectedCategory: 'Offense',
@@ -893,11 +893,16 @@ createApp({
     };
   },
   computed: {
+    selectedTeam() {
+      return this.teams.find((team) => team.value === this.selectedOption);
+    },
     selectedTeamName() {
-      return (
-        this.teams.find((team) => team.value === this.selectedOption)?.name ||
-        ''
-      );
+      return this.selectedTeam?.name || '';
+    },
+    imgSrc() {
+      return this.selectedTeam?.imgTag
+        ? `https://www.draftsharks.com/img/icons/teams/${this.selectedTeam.imgTag}.svg`
+        : '';
     },
     selectedTeamPositions() {
       return (
@@ -915,7 +920,7 @@ createApp({
   template: `
     <navigation></navigation>
     <grid :selectedHeader="selectedTeamName"></grid>
-    <card class="mt2 mb3" :showImage="true" heading="Select Team" :selectedHeader="selectedTeamName">
+    <card class="mt2 mb3" :imgSrc="imgSrc" :showImage="true" heading="Select Team" :selectedHeader="selectedTeamName">
       <div class="flex flex-row align-center justify-center">
         <label class="mr2" for="depthchartform-teamid">Choose a team:</label>
         <select id="depthchartform-teamid" v-model="selectedOption">
