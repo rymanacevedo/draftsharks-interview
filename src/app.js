@@ -1,7 +1,6 @@
 import Card from './components/Card.js';
 import CategoryFilters from './components/CategoryFilters.js';
 import Cta from './components/Cta.js';
-import FooterComponent from './components/Footer.js';
 import Grid from './components/Grid.js';
 import Navigation from './components/Navigation.js';
 import PlayerTable from './components/PlayerTable.js';
@@ -17,7 +16,6 @@ createApp({
     Tabs,
     CategoryFilters,
     PlayerTable,
-    FooterComponent,
   },
   data() {
     return {
