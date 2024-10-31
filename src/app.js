@@ -1100,23 +1100,47 @@ createApp({
         team: 'New York Jets',
         positions: {
           Offense: {
-            QB: [{ name: 'Aaron Rodgers', number: 8 }],
+            QB: [
+              { name: 'Aaron Rodgers', number: 8 },
+              { name: 'Zach Wilson', number: 2 },
+            ],
             RB: [
               { name: 'Breece Hall', number: 20 },
               { name: 'Dalvin Cook', number: 33 },
+              { name: 'Michael Carter', number: 32 },
             ],
-            WR: [
-              { name: 'Garrett Wilson', number: 17 },
-              { name: 'Allen Lazard', number: 10 },
-              { name: 'Mecole Hardman', number: 6 },
+            LWR: [{ name: 'Garrett Wilson', number: 17 }],
+            RWR: [{ name: 'Allen Lazard', number: 10 }],
+            SWR: [{ name: 'Mecole Hardman Jr.', number: 6 }],
+            TE: [
+              { name: 'Tyler Conklin', number: 83 },
+              { name: 'C.J. Uzomah', number: 87 },
             ],
-            TE: [{ name: 'Tyler Conklin', number: 83 }],
           },
           Defense: {
-            DL: [{ name: 'Quinnen Williams', number: 95 }],
-            LB: [{ name: 'C.J. Mosley', number: 57 }],
-            CB: [{ name: 'Sauce Gardner', number: 1 }],
-            S: [{ name: 'Jordan Whitehead', number: 3 }],
+            DL: [
+              { name: 'Quinnen Williams', number: 95 },
+              { name: 'Solomon Thomas', number: 94 },
+            ],
+            DE: [
+              { name: 'Carl Lawson', number: 58 },
+              { name: 'John Franklin-Myers', number: 91 },
+            ],
+            LB: [
+              { name: 'C.J. Mosley', number: 57 },
+              { name: 'Quincy Williams', number: 56 },
+            ],
+            CB: [
+              { name: 'Sauce Gardner', number: 1 },
+              { name: 'D.J. Reed', number: 4 },
+            ],
+            S: [
+              { name: 'Jordan Whitehead', number: 3 },
+              { name: 'Tony Adams', number: 22 },
+            ],
+            P: [{ name: 'Thomas Morstead', number: 6 }],
+            K: [{ name: 'Greg Zuerlein', number: 9 }],
+            LS: [{ name: 'Thomas Hennessy', number: 42 }],
           },
         },
       },
@@ -1124,23 +1148,47 @@ createApp({
         team: 'Las Vegas Raiders',
         positions: {
           Offense: {
-            QB: [{ name: 'Jimmy Garoppolo', number: 10 }],
+            QB: [
+              { name: 'Jimmy Garoppolo', number: 10 },
+              { name: 'Brian Hoyer', number: 7 },
+            ],
             RB: [
               { name: 'Josh Jacobs', number: 28 },
               { name: 'Ameer Abdullah', number: 22 },
+              { name: 'Zamir White', number: 35 },
             ],
-            WR: [
-              { name: 'Davante Adams', number: 17 },
-              { name: 'Hunter Renfrow', number: 13 },
-              { name: 'Jakobi Meyers', number: 16 },
+            LWR: [{ name: 'Davante Adams', number: 17 }],
+            RWR: [{ name: 'Jakobi Meyers', number: 16 }],
+            SWR: [{ name: 'Hunter Renfrow', number: 13 }],
+            TE: [
+              { name: 'Austin Hooper', number: 81 },
+              { name: 'Michael Mayer', number: 87 },
             ],
-            TE: [{ name: 'Austin Hooper', number: 81 }],
           },
           Defense: {
-            DL: [{ name: 'Maxx Crosby', number: 98 }],
-            LB: [{ name: 'Divine Deablo', number: 5 }],
-            CB: [{ name: 'Nate Hobbs', number: 39 }],
-            S: [{ name: "Tre'von Moehrig", number: 25 }],
+            DL: [
+              { name: 'Maxx Crosby', number: 98 },
+              { name: 'Bilal Nichols', number: 91 },
+            ],
+            DE: [
+              { name: 'Chandler Jones', number: 55 },
+              { name: 'Tyree Wilson', number: 9 },
+            ],
+            LB: [
+              { name: 'Divine Deablo', number: 5 },
+              { name: 'Robert Spillane', number: 41 },
+            ],
+            CB: [
+              { name: 'Nate Hobbs', number: 39 },
+              { name: 'Marcus Peters', number: 24 },
+            ],
+            S: [
+              { name: "Tre'von Moehrig", number: 25 },
+              { name: 'Marcus Epps', number: 1 },
+            ],
+            P: [{ name: 'AJ Cole', number: 6 }],
+            K: [{ name: 'Daniel Carlson', number: 2 }],
+            LS: [{ name: 'Jacob Bobenmoyer', number: 46 }],
           },
         },
       },
@@ -1148,23 +1196,47 @@ createApp({
         team: 'Philadelphia Eagles',
         positions: {
           Offense: {
-            QB: [{ name: 'Jalen Hurts', number: 1 }],
+            QB: [
+              { name: 'Jalen Hurts', number: 1 },
+              { name: 'Marcus Mariota', number: 8 },
+            ],
             RB: [
               { name: "D'Andre Swift", number: 0 },
               { name: 'Kenneth Gainwell', number: 14 },
+              { name: 'Boston Scott', number: 35 },
             ],
-            WR: [
-              { name: 'A.J. Brown', number: 11 },
-              { name: 'DeVonta Smith', number: 6 },
-              { name: 'Quez Watkins', number: 16 },
+            LWR: [{ name: 'A.J. Brown', number: 11 }],
+            RWR: [{ name: 'DeVonta Smith', number: 6 }],
+            SWR: [{ name: 'Quez Watkins', number: 16 }],
+            TE: [
+              { name: 'Dallas Goedert', number: 88 },
+              { name: 'Jack Stoll', number: 89 },
             ],
-            TE: [{ name: 'Dallas Goedert', number: 88 }],
           },
           Defense: {
-            DL: [{ name: 'Fletcher Cox', number: 91 }],
-            LB: [{ name: 'Haason Reddick', number: 7 }],
-            CB: [{ name: 'Darius Slay', number: 2 }],
-            S: [{ name: 'Reed Blankenship', number: 32 }],
+            DL: [
+              { name: 'Fletcher Cox', number: 91 },
+              { name: 'Jordan Davis', number: 90 },
+            ],
+            DE: [
+              { name: 'Brandon Graham', number: 55 },
+              { name: 'Josh Sweat', number: 94 },
+            ],
+            LB: [
+              { name: 'Haason Reddick', number: 7 },
+              { name: 'Nakobe Dean', number: 17 },
+            ],
+            CB: [
+              { name: 'Darius Slay', number: 2 },
+              { name: 'James Bradberry', number: 24 },
+            ],
+            S: [
+              { name: 'Reed Blankenship', number: 32 },
+              { name: 'Terrell Edmunds', number: 26 },
+            ],
+            P: [{ name: 'Arryn Siposs', number: 8 }],
+            K: [{ name: 'Jake Elliott', number: 4 }],
+            LS: [{ name: 'Rick Lovato', number: 45 }],
           },
         },
       },
@@ -1172,23 +1244,47 @@ createApp({
         team: 'Pittsburgh Steelers',
         positions: {
           Offense: {
-            QB: [{ name: 'Kenny Pickett', number: 8 }],
+            QB: [
+              { name: 'Kenny Pickett', number: 8 },
+              { name: 'Mitch Trubisky', number: 10 },
+            ],
             RB: [
               { name: 'Najee Harris', number: 22 },
               { name: 'Jaylen Warren', number: 30 },
+              { name: 'Anthony McFarland Jr.', number: 26 },
             ],
-            WR: [
-              { name: 'Diontae Johnson', number: 18 },
-              { name: 'George Pickens', number: 14 },
-              { name: 'Calvin Austin III', number: 19 },
+            LWR: [{ name: 'George Pickens', number: 14 }],
+            RWR: [{ name: 'Allen Robinson II', number: 11 }],
+            SWR: [{ name: 'Calvin Austin III', number: 19 }],
+            TE: [
+              { name: 'Pat Freiermuth', number: 88 },
+              { name: 'Darnell Washington', number: 80 },
             ],
-            TE: [{ name: 'Pat Freiermuth', number: 88 }],
           },
           Defense: {
-            DL: [{ name: 'Cameron Heyward', number: 97 }],
-            LB: [{ name: 'T.J. Watt', number: 90 }],
-            CB: [{ name: 'Levi Wallace', number: 29 }],
-            S: [{ name: 'Minkah Fitzpatrick', number: 39 }],
+            DL: [
+              { name: 'Cameron Heyward', number: 97 },
+              { name: 'Larry Ogunjobi', number: 99 },
+            ],
+            DE: [
+              { name: 'T.J. Watt', number: 90 },
+              { name: 'Alex Highsmith', number: 56 },
+            ],
+            LB: [
+              { name: 'Cole Holcomb', number: 55 },
+              { name: 'Elandon Roberts', number: 50 },
+            ],
+            CB: [
+              { name: 'Patrick Peterson', number: 20 },
+              { name: 'Levi Wallace', number: 29 },
+            ],
+            S: [
+              { name: 'Minkah Fitzpatrick', number: 39 },
+              { name: 'Keanu Neal', number: 31 },
+            ],
+            P: [{ name: 'Pressley Harvin III', number: 6 }],
+            K: [{ name: 'Chris Boswell', number: 9 }],
+            LS: [{ name: 'Christian Kuntz', number: 46 }],
           },
         },
       },
@@ -1196,23 +1292,47 @@ createApp({
         team: 'Los Angeles Chargers',
         positions: {
           Offense: {
-            QB: [{ name: 'Justin Herbert', number: 10 }],
+            QB: [
+              { name: 'Justin Herbert', number: 10 },
+              { name: 'Easton Stick', number: 2 },
+            ],
             RB: [
               { name: 'Austin Ekeler', number: 30 },
               { name: 'Joshua Kelley', number: 25 },
+              { name: 'Isaiah Spiller', number: 28 },
             ],
-            WR: [
-              { name: 'Keenan Allen', number: 13 },
-              { name: 'Mike Williams', number: 81 },
-              { name: 'Quentin Johnston', number: 1 },
+            LWR: [{ name: 'Keenan Allen', number: 13 }],
+            RWR: [{ name: 'Mike Williams', number: 81 }],
+            SWR: [{ name: 'Quentin Johnston', number: 1 }],
+            TE: [
+              { name: 'Gerald Everett', number: 7 },
+              { name: 'Donald Parham Jr.', number: 89 },
             ],
-            TE: [{ name: 'Gerald Everett', number: 7 }],
           },
           Defense: {
-            DL: [{ name: 'Sebastian Joseph-Day', number: 69 }],
-            LB: [{ name: 'Joey Bosa', number: 97 }],
-            CB: [{ name: 'J.C. Jackson', number: 27 }],
-            S: [{ name: 'Derwin James', number: 3 }],
+            DL: [
+              { name: 'Sebastian Joseph-Day', number: 69 },
+              { name: 'Austin Johnson', number: 98 },
+            ],
+            DE: [
+              { name: 'Joey Bosa', number: 97 },
+              { name: 'Khalil Mack', number: 52 },
+            ],
+            LB: [
+              { name: 'Eric Kendricks', number: 6 },
+              { name: 'Kenneth Murray Jr.', number: 9 },
+            ],
+            CB: [
+              { name: 'J.C. Jackson', number: 27 },
+              { name: 'Asante Samuel Jr.', number: 26 },
+            ],
+            S: [
+              { name: 'Derwin James Jr.', number: 3 },
+              { name: 'Alohi Gilman', number: 32 },
+            ],
+            P: [{ name: 'J.K. Scott', number: 16 }],
+            K: [{ name: 'Cameron Dicker', number: 15 }],
+            LS: [{ name: 'Josh Harris', number: 47 }],
           },
         },
       },
@@ -1220,23 +1340,47 @@ createApp({
         team: 'Seattle Seahawks',
         positions: {
           Offense: {
-            QB: [{ name: 'Geno Smith', number: 7 }],
+            QB: [
+              { name: 'Geno Smith', number: 7 },
+              { name: 'Drew Lock', number: 2 },
+            ],
             RB: [
               { name: 'Kenneth Walker III', number: 9 },
               { name: 'Zach Charbonnet', number: 26 },
+              { name: 'DeeJay Dallas', number: 31 },
             ],
-            WR: [
-              { name: 'DK Metcalf', number: 14 },
-              { name: 'Tyler Lockett', number: 16 },
-              { name: 'Jaxon Smith-Njigba', number: 11 },
+            LWR: [{ name: 'DK Metcalf', number: 14 }],
+            RWR: [{ name: 'Tyler Lockett', number: 16 }],
+            SWR: [{ name: 'Jaxon Smith-Njigba', number: 11 }],
+            TE: [
+              { name: 'Noah Fant', number: 87 },
+              { name: 'Will Dissly', number: 89 },
             ],
-            TE: [{ name: 'Noah Fant', number: 87 }],
           },
           Defense: {
-            DL: [{ name: 'Jarran Reed', number: 90 }],
-            LB: [{ name: 'Bobby Wagner', number: 54 }],
-            CB: [{ name: 'Tariq Woolen', number: 27 }],
-            S: [{ name: 'Jamal Adams', number: 33 }],
+            DL: [
+              { name: 'Jarran Reed', number: 90 },
+              { name: 'Bryan Mone', number: 92 },
+            ],
+            DE: [
+              { name: 'Uchenna Nwosu', number: 10 },
+              { name: 'Darrell Taylor', number: 52 },
+            ],
+            LB: [
+              { name: 'Bobby Wagner', number: 54 },
+              { name: 'Jordyn Brooks', number: 56 },
+            ],
+            CB: [
+              { name: 'Tariq Woolen', number: 27 },
+              { name: 'Devon Witherspoon', number: 21 },
+            ],
+            S: [
+              { name: 'Jamal Adams', number: 33 },
+              { name: 'Quandre Diggs', number: 6 },
+            ],
+            P: [{ name: 'Michael Dickson', number: 4 }],
+            K: [{ name: 'Jason Myers', number: 5 }],
+            LS: [{ name: 'Carson Tinker', number: 46 }],
           },
         },
       },
@@ -1244,23 +1388,47 @@ createApp({
         team: 'San Francisco 49ers',
         positions: {
           Offense: {
-            QB: [{ name: 'Brock Purdy', number: 13 }],
+            QB: [
+              { name: 'Brock Purdy', number: 13 },
+              { name: 'Sam Darnold', number: 14 },
+            ],
             RB: [
               { name: 'Christian McCaffrey', number: 23 },
               { name: 'Elijah Mitchell', number: 25 },
+              { name: 'Jordan Mason', number: 24 },
             ],
-            WR: [
-              { name: 'Deebo Samuel', number: 19 },
-              { name: 'Brandon Aiyuk', number: 11 },
-              { name: 'Jauan Jennings', number: 15 },
+            LWR: [{ name: 'Brandon Aiyuk', number: 11 }],
+            RWR: [{ name: 'Deebo Samuel', number: 19 }],
+            SWR: [{ name: 'Jauan Jennings', number: 15 }],
+            TE: [
+              { name: 'George Kittle', number: 85 },
+              { name: 'Charlie Woerner', number: 89 },
             ],
-            TE: [{ name: 'George Kittle', number: 85 }],
           },
           Defense: {
-            DL: [{ name: 'Nick Bosa', number: 97 }],
-            LB: [{ name: 'Fred Warner', number: 54 }],
-            CB: [{ name: 'Charvarius Ward', number: 7 }],
-            S: [{ name: 'Talanoa Hufanga', number: 29 }],
+            DL: [
+              { name: 'Arik Armstead', number: 91 },
+              { name: 'Javon Hargrave', number: 93 },
+            ],
+            DE: [
+              { name: 'Nick Bosa', number: 97 },
+              { name: 'Drake Jackson', number: 95 },
+            ],
+            LB: [
+              { name: 'Fred Warner', number: 54 },
+              { name: 'Dre Greenlaw', number: 57 },
+            ],
+            CB: [
+              { name: 'Charvarius Ward', number: 7 },
+              { name: 'Deommodore Lenoir', number: 38 },
+            ],
+            S: [
+              { name: 'Talanoa Hufanga', number: 29 },
+              { name: 'Tashaun Gipson Sr.', number: 31 },
+            ],
+            P: [{ name: 'Mitch Wishnowsky', number: 18 }],
+            K: [{ name: 'Jake Moody', number: 4 }],
+            LS: [{ name: 'Taybor Pepper', number: 46 }],
           },
         },
       },
@@ -1268,23 +1436,47 @@ createApp({
         team: 'Los Angeles Rams',
         positions: {
           Offense: {
-            QB: [{ name: 'Matthew Stafford', number: 9 }],
+            QB: [
+              { name: 'Matthew Stafford', number: 9 },
+              { name: 'Brett Rypien', number: 4 },
+            ],
             RB: [
-              { name: 'Cam Akers', number: 3 },
               { name: 'Kyren Williams', number: 23 },
+              { name: 'Ronnie Rivers', number: 30 },
+              { name: 'Zach Evans', number: 38 },
             ],
-            WR: [
-              { name: 'Cooper Kupp', number: 10 },
-              { name: 'Van Jefferson', number: 12 },
-              { name: 'Puka Nacua', number: 17 },
+            LWR: [{ name: 'Van Jefferson', number: 12 }],
+            RWR: [{ name: 'Tutu Atwell', number: 15 }],
+            SWR: [{ name: 'Puka Nacua', number: 17 }],
+            TE: [
+              { name: 'Tyler Higbee', number: 89 },
+              { name: 'Brycen Hopkins', number: 88 },
             ],
-            TE: [{ name: 'Tyler Higbee', number: 89 }],
           },
           Defense: {
-            DL: [{ name: 'Aaron Donald', number: 99 }],
-            LB: [{ name: 'Ernest Jones', number: 50 }],
-            CB: [{ name: 'Jalen Ramsey', number: 5 }],
-            S: [{ name: 'Jordan Fuller', number: 4 }],
+            DL: [
+              { name: 'Aaron Donald', number: 99 },
+              { name: 'Bobby Brown III', number: 95 },
+            ],
+            DE: [
+              { name: 'Michael Hoecht', number: 97 },
+              { name: 'Kobie Turner', number: 91 },
+            ],
+            LB: [
+              { name: 'Ernest Jones', number: 53 },
+              { name: 'Christian Rozeboom', number: 56 },
+            ],
+            CB: [
+              { name: 'Cobie Durant', number: 14 },
+              { name: 'Ahkello Witherspoon', number: 44 },
+            ],
+            S: [
+              { name: 'Jordan Fuller', number: 4 },
+              { name: 'Russ Yeast', number: 2 },
+            ],
+            P: [{ name: 'Ethan Evans', number: 42 }],
+            K: [{ name: 'Brett Maher', number: 31 }],
+            LS: [{ name: 'Alex Ward', number: 42 }],
           },
         },
       },
@@ -1292,23 +1484,47 @@ createApp({
         team: 'Tampa Bay Buccaneers',
         positions: {
           Offense: {
-            QB: [{ name: 'Baker Mayfield', number: 6 }],
+            QB: [
+              { name: 'Baker Mayfield', number: 6 },
+              { name: 'Kyle Trask', number: 2 },
+            ],
             RB: [
               { name: 'Rachaad White', number: 29 },
-              { name: 'Chase Edmonds', number: 2 },
+              { name: "Ke'Shawn Vaughn", number: 21 },
+              { name: 'Sean Tucker', number: 44 },
             ],
-            WR: [
-              { name: 'Mike Evans', number: 13 },
-              { name: 'Chris Godwin', number: 14 },
-              { name: 'Russell Gage', number: 17 },
+            LWR: [{ name: 'Mike Evans', number: 13 }],
+            RWR: [{ name: 'Chris Godwin', number: 14 }],
+            SWR: [{ name: 'Trey Palmer', number: 10 }],
+            TE: [
+              { name: 'Cade Otton', number: 88 },
+              { name: 'Ko Kieft', number: 41 },
             ],
-            TE: [{ name: 'Cade Otton', number: 88 }],
           },
           Defense: {
-            DL: [{ name: 'Vita Vea', number: 50 }],
-            LB: [{ name: 'Lavonte David', number: 54 }],
-            CB: [{ name: 'Carlton Davis', number: 24 }],
-            S: [{ name: 'Antoine Winfield Jr.', number: 31 }],
+            DL: [
+              { name: 'Vita Vea', number: 50 },
+              { name: 'Logan Hall', number: 90 },
+            ],
+            DE: [
+              { name: 'Shaquil Barrett', number: 58 },
+              { name: 'Joe Tryon-Shoyinka', number: 9 },
+            ],
+            LB: [
+              { name: 'Lavonte David', number: 54 },
+              { name: 'Devin White', number: 45 },
+            ],
+            CB: [
+              { name: 'Carlton Davis III', number: 24 },
+              { name: 'Jamel Dean', number: 35 },
+            ],
+            S: [
+              { name: 'Antoine Winfield Jr.', number: 31 },
+              { name: 'Ryan Neal', number: 23 },
+            ],
+            P: [{ name: 'Jake Camarda', number: 5 }],
+            K: [{ name: 'Chase McLaughlin', number: 3 }],
+            LS: [{ name: 'Zach Triner', number: 97 }],
           },
         },
       },
@@ -1316,23 +1532,48 @@ createApp({
         team: 'Tennessee Titans',
         positions: {
           Offense: {
-            QB: [{ name: 'Ryan Tannehill', number: 17 }],
+            QB: [
+              { name: 'Ryan Tannehill', number: 17 },
+              { name: 'Malik Willis', number: 7 },
+              { name: 'Will Levis', number: 8 },
+            ],
             RB: [
               { name: 'Derrick Henry', number: 22 },
               { name: 'Tyjae Spears', number: 32 },
+              { name: 'Julius Chestnut', number: 36 },
             ],
-            WR: [
-              { name: 'Treylon Burks', number: 16 },
-              { name: 'Nick Westbrook-Ikhine', number: 15 },
-              { name: 'Kyle Philips', number: 18 },
+            LWR: [{ name: 'DeAndre Hopkins', number: 10 }],
+            RWR: [{ name: 'Nick Westbrook-Ikhine', number: 15 }],
+            SWR: [{ name: 'Treylon Burks', number: 16 }],
+            TE: [
+              { name: 'Chigoziem Okonkwo', number: 85 },
+              { name: 'Josh Whyle', number: 81 },
             ],
-            TE: [{ name: 'Chigoziem Okonkwo', number: 85 }],
           },
           Defense: {
-            DL: [{ name: 'Jeffery Simmons', number: 98 }],
-            LB: [{ name: 'Harold Landry', number: 58 }],
-            CB: [{ name: 'Kristian Fulton', number: 26 }],
-            S: [{ name: 'Kevin Byard', number: 31 }],
+            DL: [
+              { name: 'Jeffery Simmons', number: 98 },
+              { name: 'Denico Autry', number: 96 },
+            ],
+            DE: [
+              { name: 'Harold Landry III', number: 58 },
+              { name: 'Arden Key', number: 49 },
+            ],
+            LB: [
+              { name: 'Azeez Al-Shaair', number: 2 },
+              { name: 'Monty Rice', number: 56 },
+            ],
+            CB: [
+              { name: 'Kristian Fulton', number: 26 },
+              { name: 'Sean Murphy-Bunting', number: 0 },
+            ],
+            S: [
+              { name: 'Kevin Byard', number: 31 },
+              { name: 'Amani Hooker', number: 37 },
+            ],
+            P: [{ name: 'Ryan Stonehouse', number: 4 }],
+            K: [{ name: 'Nick Folk', number: 6 }],
+            LS: [{ name: 'Morgan Cox', number: 46 }],
           },
         },
       },
@@ -1340,26 +1581,47 @@ createApp({
         team: 'Washington Commanders',
         positions: {
           Offense: {
-            QB: [{ name: 'Sam Howell', number: 14 }],
+            QB: [
+              { name: 'Sam Howell', number: 14 },
+              { name: 'Jacoby Brissett', number: 12 },
+            ],
             RB: [
               { name: 'Brian Robinson Jr.', number: 8 },
               { name: 'Antonio Gibson', number: 24 },
+              { name: 'Chris Rodriguez Jr.', number: 23 },
             ],
-            WR: [
-              { name: 'Terry McLaurin', number: 17 },
-              { name: 'Curtis Samuel', number: 10 },
-              { name: 'Jahan Dotson', number: 1 },
+            LWR: [{ name: 'Terry McLaurin', number: 17 }],
+            RWR: [{ name: 'Jahan Dotson', number: 1 }],
+            SWR: [{ name: 'Curtis Samuel', number: 10 }],
+            TE: [
+              { name: 'Logan Thomas', number: 82 },
+              { name: 'John Bates', number: 87 },
             ],
-            TE: [{ name: 'Logan Thomas', number: 82 }],
           },
           Defense: {
             DL: [
               { name: 'Jonathan Allen', number: 93 },
               { name: 'Daron Payne', number: 94 },
             ],
-            LB: [{ name: 'Jamin Davis', number: 52 }],
-            CB: [{ name: 'Kendall Fuller', number: 29 }],
-            S: [{ name: 'Kamren Curl', number: 31 }],
+            DE: [
+              { name: 'Montez Sweat', number: 90 },
+              { name: 'Chase Young', number: 99 },
+            ],
+            LB: [
+              { name: 'Jamin Davis', number: 52 },
+              { name: 'Cody Barton', number: 57 },
+            ],
+            CB: [
+              { name: 'Kendall Fuller', number: 29 },
+              { name: 'Emmanuel Forbes Jr.', number: 13 },
+            ],
+            S: [
+              { name: 'Kamren Curl', number: 31 },
+              { name: 'Darrick Forrest', number: 22 },
+            ],
+            P: [{ name: 'Tress Way', number: 5 }],
+            K: [{ name: 'Joey Slye', number: 6 }],
+            LS: [{ name: 'Camaron Cheeseman', number: 54 }],
           },
         },
       },
