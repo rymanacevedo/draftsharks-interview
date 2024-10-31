@@ -1,13 +1,15 @@
 export default {
-    props: ['players', 'sortOrder'],
-    computed: {
-      filteredPlayers() {
-        return [...this.players].sort((a, b) => 
-          this.sortOrder === 'asc' ? a.name.localeCompare(b.name) : b.name.localeCompare(a.name)
-        );
-      }
+  props: ['players', 'sortOrder'],
+  computed: {
+    filteredPlayers() {
+      return [...this.players].sort((a, b) =>
+        this.sortOrder === 'asc'
+          ? a.name.localeCompare(b.name)
+          : b.name.localeCompare(a.name),
+      );
     },
-    template: `
+  },
+  template: `
       <div class="flex justify-center pa4">
         <div class="overflow-auto">
           <table class="custom-table f6 w-100 mw8 center">
@@ -24,6 +26,5 @@ export default {
           </table>
         </div>
       </div>
-    `
-  };
-  
+    `,
+};
