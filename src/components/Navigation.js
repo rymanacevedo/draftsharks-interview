@@ -13,8 +13,8 @@ export default {
     },
   },
   template: `
-    <header id="ds-header">
-      <div class="flex center mw7 ds-header">
+    <header class="ds-header">
+      <div class="flex center mw7">
         <!-- Logo -->
         <div class="logo">
           <a href="#" aria-label="DraftSharks Home">
